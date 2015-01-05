@@ -10,86 +10,87 @@
         <link href="css/main.css" rel=stylesheet type="text/css">
         <link href="css/bootstrap.css" rel=stylesheet type="text/css">
         <script>
-   
-<!----- JQUERY FOR SLIDING NAVIGATION --->   
-$(document).ready(function() {
-  $('a[href*=#]').each(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-    && location.hostname == this.hostname
-    && this.hash.replace(/#/,'') ) {
-      var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
-      var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
-       if ($target) {
-         var targetOffset = $target.offset().top;
-
-<!----- JQUERY CLICK FUNCTION REMOVE AND ADD CLASS "ACTIVE" + SCROLL TO THE #DIV--->   
-         $(this).click(function() {
-            $("#nav li a").removeClass("active");
-            $(this).addClass('active');
-           $('html, body').animate({scrollTop: targetOffset}, 1000);
-           return false;
-         });
-      }
-    }
-  });
-
-});
-
-
-</script>
+            $(document).ready(function() {
+                $('a[href*=#]').each(function() {
+                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                        && location.hostname == this.hostname
+                        && this.hash.replace(/#/,'') ) {
+                        var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+                        var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                        if ($target) {var targetOffset = $target.offset().top;
+                                      $(this).click(function() {
+                                          $("#nav li a").removeClass("active");
+                                          $(this).addClass('active');
+                                          $('html, body').animate({scrollTop: targetOffset}, 1200);
+                                          return false;
+                                      });
+                                     }
+                    }
+                });
+            });
+        
+        </script>
  
     </head>
-    <body style="background-color: #FFFBFA;"> 
-        <div class="startpage-header">
+    <body style="background-color: #FFFBFA;">
+        <div class="header">
         </div>
-        <div class="startpage-leftbox">
-            <div class="about-me">
+        <div id="aboutme">
+            <div class="content">
                 I have recently graduated from West Virginia University
                 with a Master's degree in computer Science. I started working as a french fry specialist at Burger King, then
-                promoted to making delicious sandwiches at Dining Services. To gain some experience and
+                promoted to making delicious sandwiches at Dining Services. For some degree-related experience and
                 to stay away from food, I worked as a Graduate Assistant for a year as the typical 
                 <a href="http://www.imdb.com/title/tt0487831/">IT Guy</a>.<br>
-                To answer the unending buzz in my head to solve bigger and smarter problems, I worked as 
+                The unending buzz in my head to solve bigger and smarter problems did not let me rest there until I worked as 
                 Graduate Research Assistant under <a href="http://menzies.us">Dr. Tim Menzies</a>. 
                 I tried to learn underlying patterns in JPL, NASA's software project data and teach machines 
-                to automate future decisions. Part of my thesis, <a href="./thesis.pdf">CrossTrees</a>, helped the same.
-                Check my <a href="./defense0.0.pdf">presentation</a> for a brief version of the same.<br> 
-                I am currently looking to work with a small team on big problems. 
-                Check my updated resume <a href="http://git.naveenl.com/dev/resume/raw/master/latest/CV.pdf">here</a>.
+                to automate future decisions. Part of my thesis, <a href="./thesis.pdf">CrossTrees</a>, assisted with the same.
+                Check my <a href="./defense0.0.pdf">presentation</a> for a brief discussion on it.<br> 
+                I am currently looking to work with a small team on big problems.<br>
+                I let this site be my address in the organized chaos of interwebs. Please feel free to poke around!
             </div>
-            <div class="projects">
-                Below are list of projects I have worked on:
+        </div>
+        <div id="projects">
+            <div class="content">
+            <div class="project">List of projects I have worked on:</div>
+                <ol>
+                    <div class="project"><li><a href="./thesis.pdf">CrossTrees</a>: Machine learning algorithm to find and test patterns in large and small data sets.</li>
+                    </div>
+                    <div class="project"><li><a href="http://nave91.github.io/teak-nbtree/">TEAK on nbtree</a>: Testing essential assumption knowledge on naive-bayes tree.</li></div>
+                    <div class="project"><li><a href="http://github.com/nave91/modeller">Modeller</a>: Encased modeller to simulate metrics on software projects. Currently supports POM3 and XOMO.</li>
+                    </div>
+                    <div class="project"><li><a href="http://github.com/nave91/miner">Miner</a>: Machine learning framework to aid command line statistics on data.</li></div>
+                    <div class="project"><li><a href="http://github.com/nave91/weatheranal">Weatheranal</a>: Pig script to read large weather dataset. Written for Amazon's EMR and S3.</li></div>
+                    <div class="project"><li><a href="http://github.com/nave91/maniacmonitor">ManiacMonitor</a>: Simple motion detection system using webcam.</li></div>
+                    <div class="project"><li><a href="https://github.com/nave91/CrypTransfer">CrypTransfer</a>: End-to-end encrypted file transfer system on chord-overlay network.</li></div>
+                </ol>
+            </div>
+        </div>
+        <div id="contact">
+            <div class="content">
+                You have a lot of data and need help to figure out what it can do for you,<br>
+                If you are part of a startup, and have time to spare telling your story,<br>
+                If you are a security guy and want to talk sys admin,<br>
+                Or you have an idea and need tech help to make it a reality,<br>
+                <a href="mailto:rekojtoor@gmail.com">ping me.</a>
                 
             </div>
-            <div class="contact">
-                If you are part of a startup, I am all ears for your story.  
-            </div>             
-        </div>
-        
-        <div class="startpage-rightbox">
+        </div>             
+        <div class="rightbox">
             <h1>Naveen Kumar Lekkalapudi</h1>
-            <nav id="nav">
-            <!--ul>
-                <li>Python Freak.</li>
-                <li>Drinks Amateur Java.</li>
-                <li>Ruby Miner.</li>
-                <li>Breaks Code</li>
-                <li>Trains Machines</li>
-                <li>Pencil Shades.</li>
-                <li>Runner.</li>
-                <li>Frets on guitar.</li>
-                
-            </ul-->
-                <ul>
-                <li><a href="#about-me" class="active" >about</a> </li>
-                
-                <li><a href="#projects">projects</a> </li>
-                </ul>
-            
-            </nav>
-            
+            <wrap>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#aboutme" class="active" >About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="http://git.naveenl.com/dev/resume/raw/master/latest/CV.pdf">Resume</a></li>
+                        <li><a href="http://blog.naveenl.com">Blog</a></li>
+                    </ul>
+                </nav>
+            </wrap>
         </div>
-        
         <div class="media">
             <a target="_blank" href="mailto:rekojtoor@gmail.com"><img src="http://www.google.com/images/icons/product/googlemail-64.png" alt="gmail" height="40"></a>        
             <a href="https://www.facebook.com/lnaveenk"><img src="https://www.facebookbrand.com/img/assets/asset.f.logo.lg.png" alt="fb"  height="40"></a>
@@ -100,11 +101,7 @@ $(document).ready(function() {
 	    <a href="http://blog.naveenl.com"><img src="img/ghost.png" alt="ghost"  height="35"></a>                    
         </div>
         <div class="footer">
-            <center>&copy; 2014 <a href="mailto:rekojtoor@gmail.com">rekoJtooR</a>.</center>
-            <left>
-                
-            </left>
+            <center>&copy; 2015 <a href="mailto:rekojtoor@gmail.com">rekoJtooR</a>.</center>
         </div>
-
     </body>
 </html>
