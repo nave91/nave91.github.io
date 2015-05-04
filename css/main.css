@@ -38,17 +38,17 @@ wrapper {
 
 
 #aboutme {
-    height: 200px;
+    height: 1200px;
     text-align: right;
 }
 
 #projects {
-    height: 600px;
+    height: 1000px;
     text-align: left;
     
 }
 #contact {
-    height: 600px;
+    height: 1000px;
     text-align: left;
 }
 .center { margin: 0 auto; }
